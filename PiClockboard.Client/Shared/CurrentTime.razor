@@ -1,0 +1,25 @@
+﻿@using System
+@using System.Threading.Tasks
+
+<span>@_currentTime.ToString("h:mm tt")</span>
+
+@functions
+{
+    private DateTime _currentTime = DateTime.Now;
+
+    protected override async Task OnInitAsync()
+    {
+        await Task.Run(UpdateTime);
+    }
+
+    private async Task UpdateTime()
+    {
+        while(true)
+        {
+            _currentTime = DateTime.Now;
+            StateHasChanged();
+
+            await Task.Delay(1000);
+        }
+    }
+}
