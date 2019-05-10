@@ -346,3 +346,10 @@ healthchecksdb
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
+
+##################
+# Custom ignores #
+##################
+
+# Ignore third-party libs
+lib/
